@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(130deg , black , rgb(109, 109, 253) , black);
+    color: white;
+    gap: 29px;
+}
+.heading{
+    font-size: 50px;
+}
+.button{
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 23px;
+    align-items: center;
+    font-size: 23px;
+}
