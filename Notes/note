@@ -1,0 +1,182 @@
+const Header = () =>{
+    return(
+      <div className="heading">
+        <div className="logo">
+          <h2><a href='/'>Foot villa</a></h2>
+        </div>
+        <div className="nev-items">
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>cart</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+  
+  const burgerKing = {
+    name:"Burger King",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4",
+    cusinees: ["Burger" , "Americen"],
+    rating: "4.9",
+  }; 
+  
+  const restraurentList = [
+    {
+      type:"resutraurant",
+      data:{
+        name:"Burger King",
+        image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4",
+        cusinees: ["Burger" , "Americen"],
+        rating: "4.9",
+        id:"resutrant1",
+        city:"pipariya",
+        area:"naramda colony",
+      }
+    },
+    {
+      type:"resutraurant",
+      data:{
+        name:"KFC",
+        image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4",
+        cusinees: ["KFC" , "Americen"],
+        rating: "4.0",
+        id:"resutrant2",
+        city:"Bhopal",
+        area:"arera colony",
+      }
+    },
+    {
+      type:"resutraurant",
+      data:{
+        name:"Khana Kegana",
+        image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4",
+        cusinees: ["Khan kegana" , "Americen"],
+        rating: "4.8",
+        id:"resutrant3",
+        city:"Mumbai",
+        area:"Antiliya",
+      }
+    },
+    {
+      type:"resutraurant",
+      data:{
+        name:"MD",
+        image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4",
+        cusinees: ["MD" , "Americen"],
+        rating: "4.0",
+        id:"resutrant4",
+        city:"Indore",
+        area:"Bhaver kua",
+      }
+    }
+  ];
+  
+  const ReatorentCard = ({name , image , cusinees , rating})=>{
+    // console.log(restraurent);
+    //OBJECT DSTRUCTURING
+    // const {name , image , cusinees , rating} = restraurent.data;
+    return(
+      // <div className='card'>
+      //   <img alt="food image" src={burgerKing.image}/>
+      //   <h2>{burgerKing.name}</h2>
+      //   <h3>{burgerKing.cusinees.join(",")}</h3>
+      //   <h4>{burgerKing.rating} rating</h4>
+      // </div>
+  
+      //DYNAMIC
+      // <div className='card'>
+      //   <img alt="food image" src={restraurentList[0].data?.image}/>
+      //   <h2>{restraurentList[0].data?.name}</h2>
+      //   <h3>{restraurentList[0].data?.cusinees.join(",")}</h3>
+      //   <h4>{restraurentList[0].data?.rating} rating</h4>
+      // </div>
+  
+      //PROPS
+      // <div className='card'>
+      //   <img alt="food image" src={props.restraurent.data?.image}/>
+      //   <h2>{props.restraurent.data?.name}</h2>
+      //   <h3>{props.restraurent.data?.cusinees.join(",")}</h3>
+      //   <h4>{props.restraurent.data?.rating} rating</h4>
+      // </div>
+  
+  
+      //OBJECT DSTRUCTURING
+      <div className='card'>
+        <img alt="food image" src={image}/>
+        <h2>{name}</h2>
+        {/* <h3>{cusinees.join(",")}</h3> */}
+        <h4>{rating} rating</h4>
+      </div>
+  
+      
+  
+    );
+  }
+  
+  const Body = () =>{
+    return(
+      <div className='reatorent-list'>
+        {/* {ReatorentCard()} */}
+        {/* <ReatorentCard restraurent={restraurentList[0]}/>
+        <ReatorentCard restraurent={restraurentList[1]}/>
+        <ReatorentCard restraurent={restraurentList[2]}/>
+        <ReatorentCard restraurent={restraurentList[3]}/> */}
+        {/* <ReatorentCard 
+          name={restraurentList[0].data.name} 
+          image={restraurentList[0].data.image} 
+          cusinees={restraurentList[0].data.cusinees} 
+          rating={restraurentList[0].data.rating}
+        />
+        <ReatorentCard 
+          name={restraurentList[1].data.name} 
+          image={restraurentList[1].data.image} 
+          cusinees={restraurentList[1].data.cusinees} 
+          rating={restraurentList[1].data.rating}
+        />
+        <ReatorentCard 
+          name={restraurentList[2].data.name} 
+          image={restraurentList[2].data.image} 
+          cusinees={restraurentList[2].data.cusinees} 
+          rating={restraurentList[2].data.rating}
+        />
+        <ReatorentCard 
+          name={restraurentList[3].data.name} 
+          image={restraurentList[3].data.image} 
+          cusinees={restraurentList[3].data.cusinees} 
+          rating={restraurentList[3].data.rating}
+        /> */}
+  
+        {/* LOOP */}
+        {/* <ReatorentCard {...restraurentList[0].data}/>
+        <ReatorentCard {...restraurentList[1].data}/>
+        <ReatorentCard {...restraurentList[2].data}/>
+        <ReatorentCard {...restraurentList[3].data}/> */}
+  
+        {
+          restraurentList.map((restraunt) =>{
+            return<ReatorentCard {...restraunt.data}/>;
+          })
+        }
+  
+  
+      </div>
+    );
+  }
+  const Footer = () =>{
+    return(
+      <h1>footer</h1>
+    );
+  }
+  
+  function App() {
+    return(
+      <>
+        <Header/>
+        <Body/>
+        <Footer/>
+      </>
+    );
+  }

@@ -1,13 +1,14 @@
-import Demo from './component/Demo';
-import Nev from './component/Nev'
-// import './App.css'
-function App() {
+
+import './App.css'
+import Counter from './component/Counter'
+
+function App(){
   return(
     <>
-      <Nev/>
-      <Demo/>
+      <Counter/>
     </>
   );
 }
+
 
 export default App;

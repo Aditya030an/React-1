@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import './nev.css'
 
-const Nev = () => {
+const Counter = () => {
     const [count , setcount] = useState(0);
     function decrement(){
         const num = count-1;
@@ -18,7 +17,7 @@ const Nev = () => {
     <>
     <div className='container'>
         <div className="heading">
-            Increment and decrement
+            Increment and Decrement
         </div>
         <div className="button">
             <button className='decremet' onClick={decrement}>-</button>
@@ -26,11 +25,11 @@ const Nev = () => {
             <button className='increment' onClick={increment}>+</button>
         </div>
         <div>
-            <button onClick={reset}>reset</button>
+            <button onClick={reset} className='reset'>Reset</button>
         </div>
     </div>
     </>
   )
 }
 
-export default Nev
+export default Counter
